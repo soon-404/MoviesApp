@@ -8,12 +8,12 @@ import {
   Dimensions,
   ActivityIndicator,
   Modal,
-  Pressable,
 } from 'react-native';
 import {getMovie} from '../service/services';
 import StarRating from 'react-native-star-rating';
 import PlayButton from '../components/PlayButton';
 import dateFormat from 'dateformat';
+import Video from '../components/Video';
 
 const placeholderImage = require('../assets/images/placeholder.png');
 const height = Dimensions.get('screen').height;
@@ -84,11 +84,12 @@ const Detail = ({route, navigation}) => {
             </View>
           </ScrollView>
 
-          <Modal animationType="slide" visible={modalVisible}>
+          <Modal
+            animationType="slide"
+            visible={modalVisible}
+            supportedOrientations={['portrait', 'landscape']}>
             <View style={styles.videoModal}>
-              <Pressable onPress={() => videoShown()}>
-                <Text>Close</Text>
-              </Pressable>
+              <Video onClose={videoShown} />
             </View>
           </Modal>
         </View>
