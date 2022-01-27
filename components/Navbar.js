@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import PropTypes from 'prop-types';
+import Colors from '../Theme/Colors';
 
 const propTypes = {
   main: PropTypes.bool,
@@ -28,14 +29,14 @@ class Navbar extends React.PureComponent {
               onPress={() => {
                 navigation.navigate('Search');
               }}>
-              <Icon name={'menu-outline'} size={30} color={'#aaa'} />
+              <Icon name={'menu-outline'} size={30} color={Colors.black} />
             </TouchableOpacity>
 
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('Search');
               }}>
-              <Icon name={'search-outline'} size={30} color={'#aaa'} />
+              <Icon name={'search-outline'} size={30} color={Colors.black} />
             </TouchableOpacity>
           </View>
         ) : (
@@ -44,7 +45,7 @@ class Navbar extends React.PureComponent {
               onPress={() => {
                 navigation.goBack();
               }}>
-              <Icon name={'chevron-back'} size={40} color={'#aaa'} />
+              <Icon name={'chevron-back'} size={40} color={Colors.blackrrr} />
             </TouchableOpacity>
           </View>
         )}
